@@ -1,0 +1,27 @@
+import { layers } from '@/layers-pool'
+import { writeDir } from '@/render'
+import { install } from '@/installer'
+
+const [, , layerName, name] = process.argv
+
+const bootstrap = () => {
+  if (!layerName || !name) {
+    console.log('Expected name of layer and name')
+
+    return
+  }
+
+  const makeLayer = layers[layerName]
+
+  if (!makeLayer) {
+    console.log(`Unknown layer: ${layerName}`)
+
+    return
+  }
+
+  // TODO обработать случай, когда не оказалось прав на запись
+  writeDir(makeLayer(name), name)
+  install(layerName, name).then(() => console.log('done.'))
+}
+
+bootstrap()
