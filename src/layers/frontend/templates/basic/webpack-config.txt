@@ -23,12 +23,6 @@ export default {
       {
         test: /\.ts$/,
         loader: 'babel-loader',
-        options: {
-          presets: [
-            '@babel/preset-env',
-            '@babel/preset-typescript',
-          ],
-        },
       },
       {
         test: /\.s[ac]ss$/,
@@ -37,6 +31,10 @@ export default {
           'css-loader',
           'sass-loader',
         ],
+      },
+      {
+        test: /\.(jpg|png|webp|svg)/,
+        type: 'asset',
       },
     ],
   },

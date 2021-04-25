@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="">
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta
@@ -15,6 +15,17 @@
   <link rel="icon" href="favicon.svg">
 </head>
 <body>
+
+<div class="demo-app">
+  <h1>Ваше frontend приложение</h1>
+  <p>Подробнее на
+    <a
+      href="https://github.com/nelkor/create-layer"
+      target="_blank"
+      rel="noopener noreferrer"
+    >github</a>
+  </p>
+</div>
 
 </body>
 </html>

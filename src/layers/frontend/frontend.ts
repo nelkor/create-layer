@@ -1,6 +1,7 @@
 import { Layer } from '@/types'
 import { makeCode } from '@/layers/code/code'
 
+import indexDTxt from './templates/basic/index-d.txt'
 import webpackDevTxt from './templates/basic/webpack-dev.txt'
 import webpackProdTxt from './templates/basic/webpack-prod.txt'
 import webpackTxt from './templates/basic/webpack-config.txt'
@@ -10,14 +11,16 @@ import indexTxt from './templates/src/index.txt'
 import mainScssTxt from './templates/src/main-scss.txt'
 import mainTsTxt from './templates/src/main-ts.txt'
 
-export const makeFrontend = (name: string): Layer => {
-  const code = makeCode(name)
+export const makeFrontend = (): Layer => {
+  const code = makeCode()
 
   const tsConfig = code.scaffold['tsconfig.json'] as {
     compilerOptions: { lib: string[] }
   }
 
   tsConfig.compilerOptions.lib.push('dom')
+
+  code.scaffold['index.d.ts'] = indexDTxt
 
   const codePackage = code.scaffold['package.json'] as Record<string, unknown>
   const codeScripts = codePackage.scripts as Record<string, string>

@@ -20,7 +20,7 @@ const bootstrap = () => {
   }
 
   // TODO обработать случай, когда не оказалось прав на запись
-  writeDir(makeLayer(name), name)
+  writeDir(makeLayer(), name)
   install(layerName, name).then(() => console.log('done.'))
 }
 
