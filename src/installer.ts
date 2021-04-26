@@ -1,6 +1,8 @@
 import { exec } from 'child_process'
 import { resolve } from 'path'
 
+import { prepare } from '@/output'
+
 export const install = async (
   layerName: string,
   dirName: string
@@ -12,15 +14,20 @@ export const install = async (
       exec(command, { cwd }, resolve)
     })
 
-  console.log('installing modules...')
+  const modulesEnding = ' (this can take much time)'
+  const modulesMsg = prepare('node_modules installing', modulesEnding)
 
   await run('npm i')
 
-  console.log('almost finished...')
+  modulesMsg.resolve()
+
+  const finalMsg = prepare('final preparations')
 
   await run('npm run lint')
   await run('npm run format-json')
   await run('git init')
   await run('git add .')
   await run(`git commit -m "${layerName} created"`)
+
+  finalMsg.resolve()
 }
