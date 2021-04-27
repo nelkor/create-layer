@@ -21,13 +21,18 @@ export const install = async (
 
   modulesMsg.resolve()
 
-  const finalMsg = prepare('final preparations')
+  const formattingMsg = prepare('raw text formatting')
 
   await run('npm run lint')
   await run('npm run format-json')
+
+  formattingMsg.resolve()
+
+  const gitMsg = prepare('making the first commit')
+
   await run('git init')
   await run('git add .')
   await run(`git commit -m "${layerName} created"`)
 
-  finalMsg.resolve()
+  gitMsg.resolve()
 }

@@ -10,9 +10,12 @@ type Package = {
 export const getPackage = (layer: Layer): Package =>
   layer.scaffold['package.json'] as Package
 
-export const setName = (layer: Layer, name: string): void => {
+export const prepareScaffold = (layer: Layer, name: string): void => {
   layer.scaffold['package.json'] = {
     name,
     ...getPackage(layer),
   }
+
+  // TODO вызвать метод Layer getReadme и занести его в scaffold
+  layer.scaffold['README.md'] = `# ${name}\n\n${layer.scaffold['README.md']}`
 }

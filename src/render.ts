@@ -2,14 +2,12 @@ import { resolve, dirname } from 'path'
 import { mkdirSync, writeFileSync } from 'fs'
 
 import { Layer } from '@/types'
-import { setName } from '@/tools/dissect-layer'
+import { prepareScaffold } from '@/tools/dissect-layer'
 
 export const writeDir = (layer: Layer, name: string): void => {
   const { scaffold, getSrc } = layer
 
-  setName(layer, name)
-
-  scaffold['README.md'] = [`# ${name}`, scaffold['README.md']].join('\n\n')
+  prepareScaffold(layer, name)
 
   const files: Record<string, unknown> = {
     ...scaffold,
