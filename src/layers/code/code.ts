@@ -32,13 +32,15 @@ export const makeCode = (): Layer => {
       'jest.config.ts': jestTxt,
       'package.json': packageJson,
       'tsconfig.json': tsConfigJson,
-      'README.md': readmeTxt,
     },
     getSrc() {
       return {
         'array-sum.ts': arraySumTxt,
         'array-sum.spec.ts': arraySumSpecTxt,
       }
+    },
+    getReadme() {
+      return readmeTxt
     },
   }
 }

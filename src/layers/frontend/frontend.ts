@@ -55,7 +55,6 @@ export const makeFrontend = (): Layer => {
       'dev-helpers/webpack-dev.ts': webpackDevTxt,
       'dev-helpers/webpack-prod.ts': webpackProdTxt,
       'webpack.config.ts': webpackTxt,
-      'README.md': readmeTxt,
     },
     getSrc() {
       return {
@@ -64,6 +63,9 @@ export const makeFrontend = (): Layer => {
         'main.scss': mainScssTxt,
         'main.ts': mainTsTxt,
       }
+    },
+    getReadme() {
+      return readmeTxt
     },
   }
 }

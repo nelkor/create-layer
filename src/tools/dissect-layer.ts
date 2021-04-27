@@ -16,6 +16,5 @@ export const prepareScaffold = (layer: Layer, name: string): void => {
     ...getPackage(layer),
   }
 
-  // TODO вызвать метод Layer getReadme и занести его в scaffold
-  layer.scaffold['README.md'] = `# ${name}\n\n${layer.scaffold['README.md']}`
+  layer.scaffold['README.md'] = `# ${name}\n\n${layer.getReadme()}`
 }

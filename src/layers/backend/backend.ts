@@ -29,12 +29,14 @@ export const makeBackend = (): Layer => {
       ...code.scaffold,
 
       'webpack.config.ts': webpackTxt,
-      'README.md': readmeTxt,
     },
     getSrc() {
       return {
         'main.ts': mainTsTxt,
       }
+    },
+    getReadme() {
+      return readmeTxt
     },
   }
 }
