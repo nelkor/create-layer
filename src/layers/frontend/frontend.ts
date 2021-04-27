@@ -1,5 +1,6 @@
 import { Layer } from '@/types'
 import { makeCode } from '@/layers/code/code'
+import { getPackage } from '@/tools/dissect-layer'
 
 import indexDTxt from './templates/basic/index-d.txt'
 import webpackDevTxt from './templates/basic/webpack-dev.txt'
@@ -22,15 +23,14 @@ export const makeFrontend = (): Layer => {
 
   code.scaffold['index.d.ts'] = indexDTxt
 
-  const codePackage = code.scaffold['package.json'] as Record<string, unknown>
-  const codeScripts = codePackage.scripts as Record<string, string>
-  const codeDevDeps = codePackage.devDependencies as Record<string, string>
+  const codePackage = getPackage(code)
+  const { scripts, devDependencies } = codePackage
 
-  codeScripts.build = 'webpack'
-  codeScripts.serve = 'webpack serve'
+  scripts.build = 'webpack'
+  scripts.serve = 'webpack serve'
 
   codePackage.devDependencies = {
-    ...codeDevDeps,
+    ...devDependencies,
 
     'webpack': '^5.28.0',
     'webpack-cli': '^4.6.0',

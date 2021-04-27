@@ -1,7 +1,7 @@
 import { exec } from 'child_process'
 import { resolve } from 'path'
 
-import { prepare } from '@/output'
+import { prepare } from '@/tools/output'
 
 export const install = async (
   layerName: string,

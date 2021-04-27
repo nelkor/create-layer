@@ -1,7 +1,7 @@
 import { layers } from '@/layers-pool'
 import { writeDir } from '@/render'
 import { install } from '@/installer'
-import { prepare } from '@/output'
+import { prepare } from '@/tools/output'
 
 const [, , layerName, name] = process.argv
 
