@@ -1,6 +1,8 @@
 import { Layer } from '@/types'
 import { makeCode } from '@/layers/code/code'
 import { getPackage } from '@/tools/dissect-layer'
+import arraySumTxt from '@/layers/code/templates/src/array-sum.txt'
+import arraySumSpecTxt from '@/layers/code/templates/src/array-sum-spec.txt'
 
 import indexDTxt from './templates/basic/index-d.txt'
 import webpackDevTxt from './templates/basic/webpack-dev.txt'
@@ -62,6 +64,8 @@ export const makeFrontend = (): Layer => {
         'index.html': indexTxt,
         'main.scss': mainScssTxt,
         'main.ts': mainTsTxt,
+        'array-sum.ts': arraySumTxt,
+        'array-sum.spec.ts': arraySumSpecTxt,
       }
     },
     getReadme() {

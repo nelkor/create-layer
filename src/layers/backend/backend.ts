@@ -4,7 +4,9 @@ import { getPackage } from '@/tools/dissect-layer'
 
 import webpackTxt from './templates/basic/webpack-config.txt'
 import readmeTxt from './templates/basic/readme.txt'
-import mainTsTxt from './templates/src/main-ts.txt'
+import mainTxt from './templates/src/main.txt'
+import appTxt from './templates/src/app.txt'
+import appSpecTxt from './templates/src/app-spec.txt'
 
 export const makeBackend = (): Layer => {
   const code = makeCode()
@@ -32,7 +34,9 @@ export const makeBackend = (): Layer => {
     },
     getSrc() {
       return {
-        'main.ts': mainTsTxt,
+        'main.ts': mainTxt,
+        'app.ts': appTxt,
+        'app.spec.ts': appSpecTxt,
       }
     },
     getReadme() {
