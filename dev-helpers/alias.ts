@@ -4,7 +4,7 @@ import tsconfig from '../tsconfig.json'
 
 const { baseUrl, paths } = tsconfig.compilerOptions
 
-export default Object.entries(paths).reduce((acc, [key, [value]]) => {
+export const alias = Object.entries(paths).reduce((acc, [key, [value]]) => {
   const [symbol] = key.split('/*')
   const [path] = value.split('/*')
 

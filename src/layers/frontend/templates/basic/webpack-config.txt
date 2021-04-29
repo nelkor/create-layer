@@ -4,7 +4,7 @@ import HtmlPlugin from 'html-webpack-plugin'
 import CopyPlugin from 'copy-webpack-plugin'
 import MiniCssPlugin from 'mini-css-extract-plugin'
 
-import alias from './dev-helpers/alias'
+import { alias } from './dev-helpers/alias'
 import { devRoot, devPlugins } from './dev-helpers/webpack-dev'
 import { prodRoot, prodPlugins } from './dev-helpers/webpack-prod'
 

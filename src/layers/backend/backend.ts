@@ -2,6 +2,8 @@ import { Layer } from '@/types'
 import { makeCode } from '@/layers/code/code'
 import { getPackage } from '@/tools/dissect-layer'
 
+import dependenciesTxt from './templates/basic/dependencies.txt'
+import createPackageTxt from './templates/basic/create-package.txt'
 import webpackTxt from './templates/basic/webpack-config.txt'
 import readmeTxt from './templates/basic/readme.txt'
 import mainTxt from './templates/src/main.txt'
@@ -14,7 +16,7 @@ export const makeBackend = (): Layer => {
   const codePackage = getPackage(code)
   const { scripts, devDependencies } = codePackage
 
-  scripts.build = 'webpack'
+  scripts.build = 'webpack && ts-node dev-helpers/create-package.ts'
   scripts.start = 'node dist'
 
   codePackage.devDependencies = {
@@ -30,6 +32,8 @@ export const makeBackend = (): Layer => {
     scaffold: {
       ...code.scaffold,
 
+      'dev-helpers/dependencies.ts': dependenciesTxt,
+      'dev-helpers/create-package.ts': createPackageTxt,
       'webpack.config.ts': webpackTxt,
     },
     getSrc() {

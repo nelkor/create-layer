@@ -1,6 +1,6 @@
 import { resolve } from 'path'
 
-import alias from './dev-helpers/alias'
+import { alias } from './dev-helpers/alias'
 
 export default {
   target: 'node',
