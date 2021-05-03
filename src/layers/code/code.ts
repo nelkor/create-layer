@@ -16,31 +16,29 @@ import readmeTxt from './templates/basic/readme.txt'
 import arraySumTxt from './templates/src/array-sum.txt'
 import arraySumSpecTxt from './templates/src/array-sum-spec.txt'
 
-export const makeCode = (): Layer => {
-  return {
-    scaffold: {
-      '.idea/inspectionProfiles/Project_Default.xml': projectDefaultTxt,
-      '.idea/jsLinters/eslint.xml': eslintTxt,
-      '.idea/watcherTasks.xml': watcherTasksTxt,
-      '.vscode/settings.json': vscSettings,
-      'dev-helpers/alias.ts': aliasTxt,
-      '.babelrc': babelJson,
-      '.eslintrc': eslintJson,
-      '.prettierrc': prettierJson,
-      '.gitignore': gitIgnoreTxt,
-      'index.d.ts': '',
-      'jest.config.ts': jestTxt,
-      'package.json': packageJson,
-      'tsconfig.json': tsConfigJson,
-    },
-    getSrc() {
-      return {
-        'array-sum.ts': arraySumTxt,
-        'array-sum.spec.ts': arraySumSpecTxt,
-      }
-    },
-    getReadme() {
-      return readmeTxt
-    },
-  }
-}
+export const makeCode = (): Layer => ({
+  scaffold: {
+    '.idea/inspectionProfiles/Project_Default.xml': projectDefaultTxt,
+    '.idea/jsLinters/eslint.xml': eslintTxt,
+    '.idea/watcherTasks.xml': watcherTasksTxt,
+    '.vscode/settings.json': vscSettings,
+    'dev-helpers/alias.ts': aliasTxt,
+    '.babelrc': babelJson,
+    '.eslintrc': eslintJson,
+    '.prettierrc': prettierJson,
+    '.gitignore': gitIgnoreTxt,
+    'index.d.ts': '',
+    'jest.config.ts': jestTxt,
+    'package.json': packageJson,
+    'tsconfig.json': tsConfigJson,
+  },
+  getSrc() {
+    return {
+      'array-sum.ts': arraySumTxt,
+      'array-sum.spec.ts': arraySumSpecTxt,
+    }
+  },
+  getReadme() {
+    return readmeTxt
+  },
+})

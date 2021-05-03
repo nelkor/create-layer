@@ -31,8 +31,12 @@
       {
         "pathGroups": [
           {
-            "pattern": "@/**",
-            "group": "external"
+            "pattern": "@*/**",
+            "group": "parent"
+          },
+          {
+            "pattern": ".*/**",
+            "group": "sibling"
           }
         ],
         "newlines-between": "always"
@@ -68,6 +72,7 @@
     "require-await": 2,
     "prefer-template": 2,
     "prefer-arrow-callback": 2,
+    "arrow-body-style": 2,
 
     "max-len": [2, { "code": 80 }],
     "padding-line-between-statements": [
