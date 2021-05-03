@@ -1,6 +1,6 @@
 import { Layer } from '@/types'
 import { makeCode } from '@/layers/code/code'
-import { getPackage } from '@/tools/dissect-layer'
+import { getPackage, getCompilerOptions } from '@/tools/dissect-layer'
 import arraySumTxt from '@/layers/code/templates/src/array-sum.txt'
 import arraySumSpecTxt from '@/layers/code/templates/src/array-sum-spec.txt'
 
@@ -8,25 +8,21 @@ import indexDTxt from './templates/basic/index-d.txt'
 import webpackDevTxt from './templates/basic/webpack-dev.txt'
 import webpackProdTxt from './templates/basic/webpack-prod.txt'
 import webpackTxt from './templates/basic/webpack-config.txt'
-import readmeTxt from './templates/basic/readme.txt'
 import faviconTxt from './templates/src/favicon.txt'
 import indexTxt from './templates/src/index.txt'
 import mainScssTxt from './templates/src/main-scss.txt'
 import mainTsTxt from './templates/src/main-ts.txt'
+import readmeTxt from './templates/readme.txt'
 
 export const makeFrontend = (): Layer => {
   const code = makeCode()
-
-  const tsConfig = code.scaffold['tsconfig.json'] as {
-    compilerOptions: { lib: string[] }
-  }
-
-  tsConfig.compilerOptions.lib.push('dom')
-
-  code.scaffold['index.d.ts'] = indexDTxt
-
+  const co = getCompilerOptions(code)
   const codePackage = getPackage(code)
   const { scripts, devDependencies } = codePackage
+
+  co.lib.push('dom')
+
+  code.scaffold['index.d.ts'] = indexDTxt
 
   scripts.build = 'webpack'
   scripts.serve = 'webpack serve'

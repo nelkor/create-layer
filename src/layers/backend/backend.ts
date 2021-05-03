@@ -5,10 +5,10 @@ import { getPackage } from '@/tools/dissect-layer'
 import dependenciesTxt from './templates/basic/dependencies.txt'
 import createPackageTxt from './templates/basic/create-package.txt'
 import webpackTxt from './templates/basic/webpack-config.txt'
-import readmeTxt from './templates/basic/readme.txt'
 import mainTxt from './templates/src/main.txt'
 import appTxt from './templates/src/app.txt'
 import appSpecTxt from './templates/src/app-spec.txt'
+import readmeTxt from './templates/readme.txt'
 
 export const makeBackend = (): Layer => {
   const code = makeCode()

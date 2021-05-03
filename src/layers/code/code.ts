@@ -12,9 +12,9 @@ import gitIgnoreTxt from './templates/basic/git-ignore.txt'
 import jestTxt from './templates/basic/jest-config.txt'
 import packageJson from './templates/basic/nameless-package.json'
 import tsConfigJson from './templates/basic/ts-config.json'
-import readmeTxt from './templates/basic/readme.txt'
 import arraySumTxt from './templates/src/array-sum.txt'
 import arraySumSpecTxt from './templates/src/array-sum-spec.txt'
+import readmeTxt from './templates/readme.txt'
 
 export const makeCode = (): Layer => ({
   scaffold: {
