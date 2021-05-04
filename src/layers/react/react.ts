@@ -1,6 +1,10 @@
 import { Layer } from '@/types'
 import { makeFrontend } from '@/layers/frontend/frontend'
-import { getPackage, getCompilerOptions } from '@/tools/dissect-layer'
+import {
+  getPackage,
+  getCompilerOptions,
+  getEslint,
+} from '@/tools/dissect-layer'
 
 import readmeTxt from './templates/readme.txt'
 
@@ -18,6 +22,7 @@ const injectPreset = (layer: Layer) => {
 export const makeReact = (): Layer => {
   const frontend = makeFrontend()
   const co = getCompilerOptions(frontend)
+  const eslint = getEslint(frontend)
   const fePackage = getPackage(frontend)
   const { devDependencies } = fePackage
   const webpackConfigName = 'webpack.config.ts'
@@ -27,7 +32,10 @@ export const makeReact = (): Layer => {
 
   injectPreset(frontend)
 
+  eslint.extends.push('plugin:react/recommended')
+
   frontend.scaffold[webpackConfigName] = webpackConfig
+    .replace("'.ts'", "'.ts', '.tsx'")
     .replace('.ts$', '.tsx?$')
     .replace(presetTs, presetBoth)
 

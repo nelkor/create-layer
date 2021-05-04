@@ -12,6 +12,10 @@ type CompilerOptions = {
   jsx?: string
 }
 
+type Eslint = {
+  extends: string[]
+}
+
 export const getPackage = (layer: Layer): Package =>
   layer.scaffold['package.json'] as Package
 
@@ -22,6 +26,9 @@ export const getCompilerOptions = (layer: Layer): CompilerOptions => {
 
   return tsConfig.compilerOptions
 }
+
+export const getEslint = (layer: Layer): Eslint =>
+  layer.scaffold['.eslintrc'] as Eslint
 
 export const prepareScaffold = (layer: Layer, name: string): void => {
   layer.scaffold['package.json'] = {
