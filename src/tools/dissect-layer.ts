@@ -14,6 +14,8 @@ type CompilerOptions = {
 
 type Eslint = {
   extends: string[]
+  rules: Record<string, unknown>
+  settings: Record<string, unknown>
 }
 
 export const getPackage = (layer: Layer): Package =>

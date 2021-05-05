@@ -30,6 +30,7 @@ export const install = async (
 
   const gitMsg = prepare('making the first commit')
 
+  // TODO а что, если на компе не окажется гита?..
   await run('git init')
   await run('git add .')
   await run(`git commit -m "${layerName} created"`)

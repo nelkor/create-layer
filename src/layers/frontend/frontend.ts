@@ -1,6 +1,7 @@
 import { Layer } from '@/types'
 import { makeCode } from '@/layers/code/code'
 import { getPackage, getCompilerOptions } from '@/tools/dissect-layer'
+import { wrapHtml } from '@/tools/wrap-html'
 import arraySumTxt from '@/layers/code/templates/src/array-sum.txt'
 import arraySumSpecTxt from '@/layers/code/templates/src/array-sum-spec.txt'
 
@@ -24,6 +25,7 @@ export const makeFrontend = (): Layer => {
 
   code.scaffold['index.d.ts'] = indexDTxt
 
+  scripts['format-scss'] = 'prettier **/*.scss --write'
   scripts.build = 'webpack'
   scripts.serve = 'webpack serve'
 
@@ -57,7 +59,7 @@ export const makeFrontend = (): Layer => {
     getSrc() {
       return {
         'favicon.svg': faviconTxt,
-        'index.html': indexTxt,
+        'index.html': wrapHtml('Frontend', indexTxt),
         'main.scss': mainScssTxt,
         'main.ts': mainTsTxt,
         'array-sum.ts': arraySumTxt,

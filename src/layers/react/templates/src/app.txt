@@ -1,0 +1,20 @@
+import React, { FC } from 'react'
+import { render } from 'react-dom'
+
+const App: FC = () => (
+  <>
+    <h1>Ваше react-приложение</h1>
+    <p>
+      Подробнее на
+      <a
+        href="https://github.com/nelkor/create-layer"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        github
+      </a>
+    </p>
+  </>
+)
+
+export const renderApp = (root: Element | null): void => render(<App />, root)
