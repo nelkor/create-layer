@@ -4,8 +4,7 @@
   "private": true,
   "scripts": {
     "test": "jest",
-    "build": "webpack",
-    "start": "node dist",
+    "build": "webpack && ts-node dev-helpers/shebang",
     "ts": "tsc --noemit",
     "lint": "eslint . --ext .ts --fix",
     "format-json": "prettier **/*.json .*rc --write"

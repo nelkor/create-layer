@@ -6,6 +6,7 @@ import MiniCssPlugin from 'mini-css-extract-plugin'
 export const prodRoot = {
   mode: 'production',
   output: {
+    publicPath: '/',
     filename: 'bundle.[contenthash].js',
     path: resolve('dist'),
   },

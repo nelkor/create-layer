@@ -8,7 +8,7 @@ export default {
   entry: resolve('src/main.ts'),
   output: {
     path: resolve('dist'),
-    filename: 'index.js',
+    filename: 'bin.js',
   },
   resolve: {
     alias,
