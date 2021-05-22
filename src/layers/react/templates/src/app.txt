@@ -3,17 +3,14 @@ import { render } from 'react-dom'
 
 const App: FC = () => (
   <>
-    <h1>Ваше react-приложение</h1>
-    <p>
-      Подробнее на
-      <a
-        href="https://github.com/nelkor/create-layer"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        github
-      </a>
-    </p>
+    <h1>React starter-app</h1>
+    <a
+      href="https://github.com/nelkor/create-layer/tree/main/src/layers/react"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      readme is here
+    </a>
   </>
 )
 

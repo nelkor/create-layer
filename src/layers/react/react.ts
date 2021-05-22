@@ -88,7 +88,7 @@ export const makeReact = (): Layer => {
         'main.ts': mainTsTxt,
         'main.scss': mainScssTxt,
         'favicon.svg': faviconTxt,
-        'index.html': wrapHtml('React', '<div id="react-root"></div>'),
+        'index.html': wrapHtml('React', '<div class="demo-app"></div>'),
       }
     },
     getReadme() {

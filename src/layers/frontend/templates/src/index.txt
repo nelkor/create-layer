@@ -1,10 +1,10 @@
 <div class="demo-app">
-  <h1>Ваше frontend-приложение</h1>
-  <p>Подробнее на
-    <a
-      href="https://github.com/nelkor/create-layer"
-      target="_blank"
-      rel="noopener noreferrer"
-    >github</a>
-  </p>
+  <h1>Frontend starter-app</h1>
+  <a
+    href="https://github.com/nelkor/create-layer/tree/main/src/layers/frontend"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    readme is here
+  </a>
 </div>
