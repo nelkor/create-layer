@@ -32,20 +32,20 @@ export const makeFrontend = (): Layer => {
   codePackage.devDependencies = {
     ...devDependencies,
 
-    'webpack': '^5.28.0',
-    'webpack-cli': '^4.6.0',
-    'webpack-dev-server': '^3.11.2',
+    '@types/copy-webpack-plugin': '^8.0.0',
+    '@types/mini-css-extract-plugin': '^1.4.3',
     'babel-loader': '^8.2.2',
-    'css-loader': '^5.2.0',
-    'sass-loader': '^11.0.1',
-    'style-loader': '^2.0.0',
-    'mini-css-extract-plugin': '^1.4.0',
-    'sass': '^1.32.8',
+    'clean-webpack-plugin': '^4.0.0-alpha.0',
+    'copy-webpack-plugin': '^9.0.0',
+    'css-loader': '^5.2.6',
     'html-webpack-plugin': '^5.3.1',
-    'clean-webpack-plugin': '^3.0.0',
-    'copy-webpack-plugin': '^8.1.0',
-    '@types/mini-css-extract-plugin': '^1.4.1',
-    '@types/copy-webpack-plugin': '^6.4.1',
+    'mini-css-extract-plugin': '^1.6.0',
+    'sass': '^1.35.1',
+    'sass-loader': '^12.1.0',
+    'style-loader': '^2.0.0',
+    'webpack': '^5.39.1',
+    'webpack-cli': '^4.7.2',
+    'webpack-dev-server': '^3.11.2',
   }
 
   return {

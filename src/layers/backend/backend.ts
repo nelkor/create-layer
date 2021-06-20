@@ -22,10 +22,10 @@ export const makeBackend = (): Layer => {
   codePackage.devDependencies = {
     ...devDependencies,
 
-    '@types/node': '^14.14.39',
-    'webpack': '^5.28.0',
-    'webpack-cli': '^4.6.0',
+    '@types/node': '^15.12.4',
     'babel-loader': '^8.2.2',
+    'webpack': '^5.39.1',
+    'webpack-cli': '^4.7.2',
   }
 
   return {
