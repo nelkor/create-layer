@@ -38,7 +38,7 @@ export default {
         ],
       },
       {
-        test: /\.(woff2|jpg|png|webp|svg)/,
+        test: /\.(woff2|jpg|png|webp|svg)$/,
         type: 'asset',
       },
     ],
