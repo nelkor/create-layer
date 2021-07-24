@@ -88,6 +88,8 @@
         "prev": ["multiline-block-like", "multiline-const", "multiline-let"],
         "next": "*"
       },
+      { "blankLine": "always", "prev": "export", "next": "*" },
+      { "blankLine": "always", "prev": "*", "next": "export" },
       { "blankLine": "always", "prev": "singleline-const", "next": "*" },
       { "blankLine": "always", "prev": "singleline-let", "next": "*" },
       { "blankLine": "always", "prev": "*", "next": "singleline-const" },
