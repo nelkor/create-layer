@@ -33,19 +33,19 @@ export const makeFrontend = (): Layer => {
     ...devDependencies,
 
     '@types/copy-webpack-plugin': '^8.0.1',
-    '@types/mini-css-extract-plugin': '^2.0.1',
+    '@types/mini-css-extract-plugin': '^2.2.0',
     'babel-loader': '^8.2.2',
     'clean-webpack-plugin': '^4.0.0-alpha.0',
     'copy-webpack-plugin': '^9.0.1',
-    'css-loader': '^5.2.6',
+    'css-loader': '^6.2.0',
     'html-webpack-plugin': '^5.3.2',
-    'mini-css-extract-plugin': '^2.1.0',
-    'sass': '^1.35.2',
+    'mini-css-extract-plugin': '^2.2.0',
+    'sass': '^1.38.0',
     'sass-loader': '^12.1.0',
-    'style-loader': '^3.0.0',
-    'webpack': '^5.43.0',
-    'webpack-cli': '^4.7.2',
-    'webpack-dev-server': '^3.11.2',
+    'style-loader': '^3.2.1',
+    'webpack': '^5.51.1',
+    'webpack-cli': '^4.8.0',
+    'webpack-dev-server': '^4.0.0',
   }
 
   return {
