@@ -5,7 +5,7 @@ import CopyPlugin from 'copy-webpack-plugin'
 import MiniCssPlugin from 'mini-css-extract-plugin'
 
 import { alias } from './dev-helpers/alias'
-import { devRoot, devPlugins } from './dev-helpers/webpack-dev'
+import { devRoot } from './dev-helpers/webpack-dev'
 import { prodRoot, prodPlugins } from './dev-helpers/webpack-prod'
 
 const isDev = process.argv[2] == 'serve'
@@ -32,7 +32,7 @@ export default {
       {
         test: /\.s[ac]ss$/,
         use: [
-          (isDev ? 'style-loader' : MiniCssPlugin.loader),
+          isDev ? 'style-loader' : MiniCssPlugin.loader,
           'css-loader',
           'sass-loader',
         ],
@@ -44,7 +44,7 @@ export default {
     ],
   },
   plugins: [
-    ...(isDev ? devPlugins : prodPlugins),
+    ...(isDev ? [] : prodPlugins),
 
     new HtmlPlugin({ template: resolve('src/index.html') }),
     new CopyPlugin({

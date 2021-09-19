@@ -1,5 +1,3 @@
-import { HotModuleReplacementPlugin } from 'webpack'
-
 export const devRoot = {
   mode: 'development',
   output: {
@@ -12,5 +10,3 @@ export const devRoot = {
   },
   devtool: 'inline-source-map',
 }
-
-export const devPlugins = [new HotModuleReplacementPlugin]

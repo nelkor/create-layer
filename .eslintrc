@@ -62,6 +62,7 @@
     "no-loss-of-precision": 2,
     "no-promise-executor-return": 2,
     "no-useless-backreference": 2,
+    "no-throw-literal": 2,
     "array-callback-return": 2,
     "consistent-return": 2,
     "dot-notation": 2,
