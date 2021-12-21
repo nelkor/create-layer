@@ -9,6 +9,7 @@ export default {
   output: {
     path: resolve('dist'),
     filename: 'bin.js',
+    clean: true,
   },
   resolve: {
     alias,
