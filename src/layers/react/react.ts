@@ -33,15 +33,15 @@ const updatePackage = (layer: Layer) => {
   layerPackage.devDependencies = {
     ...devDependencies,
 
-    '@babel/preset-react': '^7.14.5',
-    '@types/react': '^17.0.19',
-    '@types/react-dom': '^17.0.9',
-    'eslint-plugin-react': '^7.24.0',
+    '@babel/preset-react': '^7.16.7',
+    '@types/react': '^18.0.8',
+    '@types/react-dom': '^18.0.0',
+    'eslint-plugin-react': '^7.29.4',
   }
 
   layerPackage.dependencies = {
-    'react': '^17.0.2',
-    'react-dom': '^17.0.2',
+    'react': '^18.1.0',
+    'react-dom': '^18.1.0',
   }
 }
 

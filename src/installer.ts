@@ -17,6 +17,7 @@ export const install = async (
   const modulesEnding = ' (this can take much time)'
   const modulesMsg = prepare('node_modules installing', modulesEnding)
 
+  // TODO установить пакеты по именам, без указания версий
   await run('npm i')
 
   modulesMsg.resolve()
